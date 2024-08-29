@@ -8,6 +8,7 @@ on:
 
 jobs:
   start_record:
+    timeout-minutes: 2
     runs-on: [self-hosted, cmba-15]
     steps:
       - uses: actions/checkout@v2
