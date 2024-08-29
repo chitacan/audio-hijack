@@ -1,0 +1,12 @@
+name: start record
+on:
+  workflow_dispatch:
+
+jobs:
+  start_record:
+    runs-on: [self-hosted, cmba]
+    steps:
+      - uses: actions/checkout@v2
+      - name: open vscode
+        run: |
+          open -b com.rogueamoeba.audiohijack start-record.ahcommand
