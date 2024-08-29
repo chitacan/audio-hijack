@@ -1,12 +1,16 @@
 name: start record
 on:
   workflow_dispatch:
+    inputs:
+      script:
+        description: script name
+        default: 'start_record'
 
 jobs:
   start_record:
-    runs-on: [self-hosted, cmba]
+    runs-on: [self-hosted, cmba-15]
     steps:
       - uses: actions/checkout@v2
       - name: open vscode
         run: |
-          open -b com.rogueamoeba.audiohijack start-record.ahcommand
+          open -b com.rogueamoeba.audiohijack ${{ github.event.inputs.script }}.ahcommand
