@@ -2,7 +2,6 @@ const sessionName = 'Voice Chat via Arc';
 
 const session = app.sessionWithName(sessionName);
 
-if (!session.running) {
-  session.start();
-  // session.showWindow();
+if (session.running) {
+  session.stop();
 }
